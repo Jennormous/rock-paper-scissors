@@ -6,21 +6,20 @@
 }
 
 body {
-  background-color: #252830; 
+  background-color: #252830;
 }
 
 .header {
-display: flex;
-flex-flow: row  nowrap;
-justify-content: center;
-align-items: center;
-height: 10vh;
-background-color: white;
-font-size: 2rem;
-
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: white;
+  font-size: 2rem;
 
   &__title {
-justify-content: center;
+    justify-content: center;
     padding: 20px;
     color: black;
   }
@@ -33,36 +32,28 @@ justify-content: center;
   align-items: center;
   width: 30vw;
   height: 10vh;
-margin: 5vh auto;
-border: 2px solid white;
-color: white;
-font-size: 1.5em;
+  margin: 5vh auto;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.5em;
 
-  &__badge{
+  &__badge {
     padding: 10px;
     background: red;
     color: white;
     text-align: center;
-  
-    
-    
 
     &--user {
-
     }
 
-    &--comp{
-
+    &--comp {
     }
 
     &--userscore {
-
     }
 
     &--compscore {
-
     }
-
   }
 }
 
@@ -70,42 +61,34 @@ font-size: 1.5em;
   display: flex;
   justify-content: center;
 
-
   &__message {
     text-align: center;
-    color: white; 
+    color: white;
     font-size: 4em;
-
   }
 }
 .choices {
   display: flex;
-  flex-flow: row nowrap; 
+  flex-flow: row nowrap;
   justify-content: center;
   transition: all 0.3s ease;
-  
 
   &__item {
     padding: 30px;
     margin: 50px 10px 20px 10px;
     border: 4px solid white;
     border-radius: 50%;
-   
-    
 
-    &--rock{
+    &--rock {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      
     }
 
     &--paper {
-
       width: 150px;
       height: 150px;
       border-radius: 50%;
-     
     }
 
     &--scissors {
@@ -113,8 +96,6 @@ font-size: 1.5em;
       height: 150px;
       border-radius: 50%;
       background-color: grey;
-     
-
     }
   }
 
@@ -123,12 +104,24 @@ font-size: 1.5em;
   }
 }
 
-
-
 .action-message {
   text-align: center;
-  color: white; 
+  color: white;
   font-size: 50px;
-  margin: 2vh 0; 
+  margin: 2vh 0;
+}
 
+.winner {
+  border: 4px solid green;
+  box-shadow: 0 0 10px green;
+}
+
+.loser {
+  border: 4px solid red;
+  box-shadow: 0 0 10px red;
+}
+
+.draw {
+  border: 4px solid gray;
+  box-shadow: 0 0 10px gray;
 }
