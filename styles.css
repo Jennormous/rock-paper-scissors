@@ -212,8 +212,8 @@ body {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    width: 30vw;
-    height: 10vh;
+    width: 40vw;
+    height: 15vh;
     font-size: 3em;
   }
   .result__message {
