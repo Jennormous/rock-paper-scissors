@@ -12,8 +12,8 @@ const rock_div = document.getElementById("r");
 const paper_div = document.querySelector("#p");
 const scissor_div = document.querySelector("#s");
 
-const smallUserWord = "(user)".fontsize(3).sup();
-const smallCompWord = "(cpu)".fontsize(3).sup();
+// const smallUserWord = "(user)".fontsize(3).sup();
+// const smallCompWord = "(cpu)".fontsize(3).sup();
 
 function getCompChoice() {
   const choices = ["r", "p", "s"];
@@ -32,11 +32,9 @@ function win(userChoice, compChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   compScore_span.innerHTML = compScore;
-  result_p.innerHTML = `${convertLetter(
-    userChoice
-  )} ${smallUserWord} beats ${convertLetter(
+  result_p.innerHTML = `${convertLetter(userChoice)} beats ${convertLetter(
     compChoice
-  )} ${smallCompWord}. You WIN! 🔥 🔥 🔥`;
+  )}. You WIN! 🔥`;
 
   userChoice_div.classList.add("winner");
   setTimeout(() => userChoice_div.classList.remove("winner"), 400);
@@ -49,9 +47,9 @@ function lose(userChoice, compChoice) {
   compScore_span.innerHTML = compScore;
   result_p.innerHTML = `${convertLetter(
     userChoice
-  )} ${smallUserWord} loses to ${convertLetter(
+  )} loses to ${convertLetter(
     compChoice
-  )} ${smallCompWord}. You lost.... 😭`;
+  )}. You lost.... 😭`;
 
   userChoice_div.classList.add("loser");
   setTimeout(() => userChoice_div.classList.remove("loser"), 400);

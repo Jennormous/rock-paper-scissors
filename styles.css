@@ -10,14 +10,11 @@ body {
   background-color: #252830;
 }
 
+/* MOBILE */
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -26,15 +23,15 @@ body {
           align-items: center;
   height: 10vh;
   background-color: white;
-  font-size: 2rem;
 }
 
 .header__title {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 20px;
+  padding: 10px 5vw;
   color: black;
+  font-size: 1rem;
 }
 
 .scoreboard {
@@ -50,9 +47,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 30vw;
+  margin: 10px 5vw;
+  width: 90vw;
   height: 10vh;
-  margin: 5vh auto;
+  border-radius: 4px;
   border: 2px solid white;
   color: white;
   font-size: 1.5em;
@@ -77,46 +75,54 @@ body {
 .result__message {
   text-align: center;
   color: white;
-  font-size: 4em;
+  margin: 2vw 0;
 }
 
 .choices {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .choices__item {
-  padding: 30px;
-  margin: 50px 10px 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40vw;
+  min-height: 120px;
+  padding: 10px;
+  margin: 2vw;
   border: 4px solid white;
   border-radius: 50%;
 }
 
 .choices__item--rock {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  min-height: 100px;
   border-radius: 50%;
 }
 
 .choices__item--paper {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  min-height: 100px;
   border-radius: 50%;
 }
 
 .choices__item--scissors {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  min-height: 100px;
   border-radius: 50%;
   background-color: grey;
 }
@@ -128,8 +134,106 @@ body {
 .action-message {
   text-align: center;
   color: white;
-  font-size: 50px;
+  font-size: 2rem;
   margin: 2vh 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 0.5rem;
+  }
+  .header__title {
+    padding: 20px;
+    font-size: 3rem;
+  }
+  .scoreboard {
+    width: 50vw;
+    height: 15vh;
+    margin: 5vh auto;
+  }
+  .result__message {
+    margin: 0 5vw;
+    font-size: 2.5em;
+  }
+  .choices {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .choices__item {
+    padding: 30px;
+    margin: 50px 10px 20px 10px;
+  }
+  .choices__item--rock {
+    width: 150px;
+    min-height: 150px;
+  }
+  .choices__item--paper {
+    width: 150px;
+    min-height: 150px;
+  }
+  .choices__item--scissors {
+    width: 150px;
+    height: 150px;
+  }
+  .choices__item:hover {
+    background: black;
+  }
+  .action-message {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin: 2vh 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    height: 10vh;
+  }
+  .header__title {
+    font-size: 4rem;
+  }
+  .scoreboard {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 30vw;
+    height: 10vh;
+    font-size: 3em;
+  }
+  .result__message {
+    font-size: 4em;
+  }
+  .choices {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .choices__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 250px;
+    height: 250px;
+  }
 }
 
 .winner {
