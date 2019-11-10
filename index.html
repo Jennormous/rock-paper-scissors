@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Rock, Paper, Scissors</h1>
+    </header>
+    <div class="scoreboard">
+      <div class="scoreboard__badge scoreboard__badge--user">User</div>
+    
+      <span class="scoreboard__badge--user-score">0</span>:<span
+        class="scoreboard__badge--comp-score"
+        >0</span
+      >   <div class="scoreboard__badge scoreboard__badge--comp">Comp</div>
+    </div>
+
+    <div class="result">
+      <p class="result__message">Paper covers Rock. YOU WIN!</p>
+    </div>
+
+    <div class="choices">
+      <div class="choices__item">
+        <img class="choices__item--rock" src="assets/rock.jpg" alt="" />
+      </div>
+      <div class="choices__item">
+        <img class="choices__item--paper" src="assets/paper.png" alt="" />
+      </div>
+      <div class="choices__item">
+        <img class="choices__item--scissors" src="assets/scissors.png" alt="" />
+      </div>
+    </div>
+    <p class="action-message">Make Your Move.</p>
+    <footer></footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
