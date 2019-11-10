@@ -1,5 +1,3 @@
-console.log("meow");
-
 let userScore = 0;
 let compScore = 0;
 
@@ -10,9 +8,12 @@ const scoreBoard_div = document.querySelector(".scoreboard");
 
 const result_p = document.querySelector(".result > p");
 
-const rock_img = document.querySelector(".choices__item--rock");
-const paper_img = document.querySelector(".choices__item--paper");
-const scissor_img = document.querySelector(".choices__item--scissors");
+const rock_div = document.querySelector("#rock");
+const paper_div = document.querySelector("#paper");
+const scissor_div = document.querySelector("#scissors");
+
+const smallUserWord = "(user)".fontsize(3).sup();
+const smallCompWord = "(cpu)".fontsize(3).sup();
 
 function getCompChoice() {
   const choices = ["r", "p", "s"];
@@ -30,44 +31,44 @@ function win(userChoice, compChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   compScore_span.innerHTML = compScore;
-  const smallUserWord = "user".fontsize(3).sub();
-  const smallCompWord = "cpu".fontsize(3).sub();
   result_p.innerHTML = `${convertLetter(
     userChoice
-  )}${smallUserWord} beats ${convertLetter(
+  )} ${smallUserWord} beats ${convertLetter(
     compChoice
-  )}${smallCompWord}. You WIN! `;
+  )} ${smallCompWord}. You WIN! 🔥 🔥 🔥`;
+
+  const roundStatus = document.getElementById(userChoice);
+  roundStatus.add("winner");
 }
 
 function lose(userChoice, compChoice) {
   compScore++;
   userScore_span.innerHTML = userScore;
   compScore_span.innerHTML = compScore;
-  const smallUserWord = "user".fontsize(3).sub();
-  const smallCompWord = "cpu".fontsize(3).sub();
   result_p.innerHTML = `${convertLetter(
     userChoice
-  )}${smallUserWord} loses to ${convertLetter(
+  )} ${smallUserWord} loses to ${convertLetter(
     compChoice
-  )}${smallCompWord}. You lost.... `;
+  )} ${smallCompWord}. You lost.... 😭`;
+
+  const roundStatus = document.getElementById(userChoice);
+  roundStatus.add("loser");
 }
 
-function draw(userChoice, compChoice) {
-  const smallUserWord = "user".fontsize(3).sub();
-  const smallCompWord = "cpu".fontsize(3).sub();
-  result_p.innerHTML = `${convertLetter(
+function draw(userChoice) {
+  result_p.innerHTML = `You both chose ${convertLetter(
     userChoice
-  )}${smallUserWord} equals ${convertLetter(
-    compChoice
-  )}${smallCompWord}. It's a draw. `;
-}
+  )}. It's a draw 😐`;
 
+  const roundStatus = document.getElementById(userChoice);
+  roundStatus.add("draw");
+}
 function game(userChoice) {
   const compChoice = getCompChoice();
   switch (userChoice + compChoice) {
     case "rs":
     case "pr":
-    case "sr":
+    case "sp":
       win(userChoice, compChoice);
       break;
     case "rp":
@@ -84,24 +85,19 @@ function game(userChoice) {
 }
 
 function main() {
-  rock_img.addEventListener("click", function() {
+  rock_div.addEventListener("click", function() {
     game("r");
-    console.log("you clicked rock");
   });
 
-  paper_img.addEventListener("click", function() {
-    console.log("you clicked paper");
+  paper_div.addEventListener("click", function() {
     game("p");
   });
 
-  scissor_img.addEventListener("click", function() {
-    console.log("you clicked scissor");
+  scissor_div.addEventListener("click", function() {
     game("s");
   });
 }
 
 main();
- 
 
 /*Rock, paper, scissors game that uses HTML, CSS, and JavaScript. Tutorial from: https://www.youtube.com/watch?v=jaVNP3nIAv0 in collaboration with FreeCodeCamp.com */
-

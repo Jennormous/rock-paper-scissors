@@ -16,8 +16,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row  nowrap;
-          flex-flow: row  nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -130,5 +130,23 @@ body {
   color: white;
   font-size: 50px;
   margin: 2vh 0;
+}
+
+.winner {
+  border: 4px solid green;
+  -webkit-box-shadow: 0 0 10px green;
+          box-shadow: 0 0 10px green;
+}
+
+.loser {
+  border: 4px solid red;
+  -webkit-box-shadow: 0 0 10px red;
+          box-shadow: 0 0 10px red;
+}
+
+.draw {
+  border: 4px solid gray;
+  -webkit-box-shadow: 0 0 10px gray;
+          box-shadow: 0 0 10px gray;
 }
 /*# sourceMappingURL=styles.css.map */
