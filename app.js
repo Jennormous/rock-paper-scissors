@@ -8,9 +8,9 @@ const scoreBoard_div = document.querySelector(".scoreboard");
 
 const result_p = document.querySelector(".result > p");
 
-const rock_div = document.querySelector("#rock");
-const paper_div = document.querySelector("#paper");
-const scissor_div = document.querySelector("#scissors");
+const rock_div = document.getElementById("r");
+const paper_div = document.querySelector("#p");
+const scissor_div = document.querySelector("#s");
 
 const smallUserWord = "(user)".fontsize(3).sup();
 const smallCompWord = "(cpu)".fontsize(3).sup();
@@ -28,6 +28,7 @@ function convertLetter(letter) {
 }
 
 function win(userChoice, compChoice) {
+  let userChoice_div = document.getElementById(userChoice);
   userScore++;
   userScore_span.innerHTML = userScore;
   compScore_span.innerHTML = compScore;
@@ -37,11 +38,12 @@ function win(userChoice, compChoice) {
     compChoice
   )} ${smallCompWord}. You WIN! 🔥 🔥 🔥`;
 
-  const roundStatus = document.getElementById(userChoice);
-  roundStatus.add("winner");
+  userChoice_div.classList.add("winner");
+  setTimeout(() => userChoice_div.classList.remove("winner"), 400);
 }
 
 function lose(userChoice, compChoice) {
+  let userChoice_div = document.getElementById(userChoice);
   compScore++;
   userScore_span.innerHTML = userScore;
   compScore_span.innerHTML = compScore;
@@ -51,17 +53,18 @@ function lose(userChoice, compChoice) {
     compChoice
   )} ${smallCompWord}. You lost.... 😭`;
 
-  const roundStatus = document.getElementById(userChoice);
-  roundStatus.add("loser");
+  userChoice_div.classList.add("loser");
+  setTimeout(() => userChoice_div.classList.remove("loser"), 400);
 }
 
 function draw(userChoice) {
+  let userChoice_div = document.getElementById(userChoice);
   result_p.innerHTML = `You both chose ${convertLetter(
     userChoice
   )}. It's a draw 😐`;
 
-  const roundStatus = document.getElementById(userChoice);
-  roundStatus.add("draw");
+  userChoice_div.classList.add("draw");
+  setTimeout(() => userChoice_div.classList.remove("draw"), 400);
 }
 function game(userChoice) {
   const compChoice = getCompChoice();
